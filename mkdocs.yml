@@ -23,8 +23,8 @@ nav:
     - index.md
   - Knowledge:
     - Knowledge/index.md
-  # - Wisdom:
-  #   - Wisdom/index.md
+  - Wisdom:
+    - Wisdom/index.md
   - Handicraft:
     - Handicraft/index.md
   - Appreciation:
