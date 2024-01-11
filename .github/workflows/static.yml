@@ -10,25 +10,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # 不设置这个就会让 update 和 create 混淆
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-git-revision-date-localized-plugin
-      - run: pip install jieba
-      - run: pip install rich
-      - run: pip install mkdocs-statistics-plugin
-      - run: pip install mkdocs-changelog-plugin
-      - run: pip install mkdocs-extra-sass-plugin
-      - run: pip install livereload
       - uses: actions/cache@v3
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
-            mkdocs-material- 
+            mkdocs-material-
+      - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force
