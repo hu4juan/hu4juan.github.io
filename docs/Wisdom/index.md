@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# The wisdom of love
+我究竟想要的是什么呢，在步入一段感情我应该考虑什么呢
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+[麦穗理论](https://zhuanlan.zhihu.com/p/79865519)是我觉得比较合理的一种对待另一半选择的策略。我觉得谈恋爱像是考试，每一个标准都暗中定好了分值，我们基本不可能找到每一项都满分的另一半，我们能做的就是找到一个分数在八十分左右的人，然后把他置成100分。爱情就是一个人有很多缺点，但是她身上的有那么一个优点，对你来说，那个优点足以闪耀盖过她所有的缺点，这也是一种满分。我觉得我目前已经经过了那37%的麦田，我也差不多做好准备来迎接你的到来
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+谈恋爱的几个问题
+# 1.就业，领证异地还是妥协
+# 2.周年生日礼物好恶心
+# 3.家庭条件
+# 4.情感需求
+# 5.丁克，买房
