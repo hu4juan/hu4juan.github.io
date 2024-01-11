@@ -1,0 +1,46 @@
+site_name: hu4juan's notebook 
+site_url: https://hu4juan.github.io/
+repo_name: hu4juan's blog
+repo_url: https://github.com/hu4juan/hu4juan.github.io
+theme:
+  name: material
+  
+  features:
+    - search.suggest
+    - search.highlight
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+
+  icon:
+    repo: fontawesome/brands/git-alt
+    logo: material/snowflake
+    homeicon: material/home
+
+nav:
+  - Home:
+    - index.md
+  - Knowledge:
+    - Knowledge/index.md
+  # - Wisdom:
+  #   - Wisdom/index.md
+  - Handicraft:
+    - Handicraft/index.md
+  - Appreciation:
+    - Appreciation/index.md
+
+plugins:
+  - search
+
+
+
+
+
+
+
+
+
+
+
+
