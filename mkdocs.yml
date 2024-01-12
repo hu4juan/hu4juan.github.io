@@ -1,4 +1,4 @@
-site_name: hu4juan's notebook 
+site_name: hu4juan's Blog
 site_url: https://hu4juan.github.io/
 repo_name: hu4juan's blog
 repo_url: https://github.com/hu4juan/hu4juan.github.io
@@ -12,11 +12,40 @@ theme:
     - navigation.tabs
     - navigation.indexes
     - navigation.top
-
+    - toc.follow 
+  favicon: static/favico.ico
   icon:
     repo: fontawesome/brands/git-alt
-    logo: material/snowflake
+    logo: material/flower-outline
     homeicon: material/home
+
+    info: fontawesome/solid/circle-info
+    note: fontawesome/solid/pen-fancy
+    abstract: fontawesome/solid/clipboard-list
+    tip: fontawesome/solid/lightbulb
+    success: fontawesome/solid/check
+    question: fontawesome/solid/circle-question
+    warning: fontawesome/solid/triangle-exclamation
+    danger: fontawesome/solid/virus
+    bug: fontawesome/solid/bug
+    example: fontawesome/solid/flask
+    quote: fontawesome/solid/quote-left
+
+
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
 nav:
   - Home:
@@ -25,14 +54,74 @@ nav:
     - Knowledge/index.md
   - Wisdom:
     - Wisdom/index.md
+    - 我的要求: Wisdom/whatneed.md
   - Handicraft:
     - Handicraft/index.md
   - Appreciation:
     - Appreciation/index.md
+    - 影视鉴赏: Appreciation/film.md
+markdown_extensions:
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}} # enable Unicode link
+  - tables
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      use_pygments: true
+      pygments_lang_class: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+
+  - css/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css
+
+extra_javascript:
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - js/tablesort.js
 
 plugins:
-  - search
-
+  - search:
+      separator: '[\s\u200b\-]'
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+  - statistics
+extra:
+  analytics:
+    provider: google
+    property: G-XVCQ01HH08
 
 
 
