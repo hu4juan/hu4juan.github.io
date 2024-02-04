@@ -52,8 +52,9 @@ nav:
     - index.md
   - Knowledge:
     - Knowledge/index.md
-    - Deeplearning: Knowledge/torch.md
     - Docker: Knowledge/docker.md
+    - Deeplearning: Knowledge/torch.md
+
   - Wisdom:
     - Wisdom/index.md
     - 我的要求: Wisdom/whatneed.md
