@@ -1,19 +1,19 @@
 记录docker的一些命令
-# docker命令
-## 帮助命令
+## docker命令
+### 帮助命令
 ```shell
 docker version 
 docker info
 docker 命令 --help
 ``` 
-## 镜像命令
+### 镜像命令
 ```shell
 docker images       # 显示主机上的所有镜像   
 docker search 镜像名 # 在dockerhub 搜索镜像 
 docker pull 镜像名   #下载镜像 
 docker rmi          #删除镜像 
 ```
-## 容器命令
+### 容器命令
 ```shell
 docker run 镜像id   # 新建容器并启动
 docker ps          # 列出所有运行的容器 
@@ -31,7 +31,7 @@ docker kill 容器id	    # 强制停止当前容器
 exit 		# 容器停止并退出
 ctrl +P +Q  # 容器不停止退出 
 ```
-## 其他命令
+### 其他命令
 ```shell
 docker logs 		  # 查看日志
 docker inspect 容器id  # 查看镜像的元数据
@@ -41,19 +41,19 @@ docker exec 		  # 进入当前容器后开启一个新的终端，可以在里�
 docker attach 		  # 进入容器正在执行的终端
 docker cp 容器id:容器内路径  主机目的路径 # 从容器内拷贝到主机上
 ```
-## 实战
+### 实战
 ```shell
 # -d 后台运行 -p 宿主机端口 : 容器内部端口
 docker run -d --name 容器名 -p 主机端口:容器内端口 镜像名
 # --rm 用完就删
 docker run -it --rm tomcat:9.0
 ```
-# 提交
+## 提交
 ```shell
 # 容器ID是需要打包的容器的ID
 docker commit -m="提交的信息" -a= "author" 容器ID 目标镜像名:[TAG]
 ```
-# 容器数据卷
+## 容器数据卷
 ```shell
 # docker run -it -v /home/ceshi:/home 如果本地没有这条命令执行后会自动创建  
 docker run -it -v 主机目录:容器目录
@@ -64,7 +64,7 @@ docker run -it -v 主机目录:容器目录
 容器内路径:rw  # read and write
 --volumes-from 容器名 # 和别的容器公用挂载卷
 ```
-# dockerfile
+## dockerfile
 
 ```shell
 FROM       # 基础镜镜像，一切从这里开始构建
@@ -81,7 +81,7 @@ ENV        # 构建的时候设置环境变量
 docker build -f 文件路径 -t 镜像名:tag . # 上下文路径,记得写 
 docker push # 需要登录
 ```
-# docker 网络 
+## docker 网络 
 采用了 veth-pair技术, 利用docker0构造网口对.可实现不同容器之间的直接相连 
 ```shell
 # 查看内部内部的网络地址 ip addr

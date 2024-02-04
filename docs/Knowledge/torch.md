@@ -1,18 +1,18 @@
-# conda基础
+## conda基础
 ```shell
 conda env list
 conda list 
 conda create -n env-name python=3.6
 conda remove -n env-name --all
 ```
-# tensor基础
-## tensor的生成
+## tensor基础
+### tensor的生成
 ```python
 a=[[1,2.],[3,4]]
 # 将列表转化为 tensor, a可以是numpy array 或者 list 
 b=torch.tensor(a)    #torch.from_numpy()  没有必要,可以直接用torch.tensor()
 ```
-## tensor的查看
+### tensor的查看
 ```python
 # tensor的属性
 a.dtype  # 数据类型
@@ -27,7 +27,7 @@ torch.is_floating_point(a)
 torch.numel(a)  # 返回tensor中元素的个数
 torch.set_default_tensor_type()# 设置默认数据类型
 ```
-## tensor的一些操作
+### tensor的一些操作
 ```python
 # 生成形状相同的tensor
 a=torch.ones_like(b)
@@ -51,12 +51,4 @@ torch.cat() # 需要除了拼接的维度以外,其他维度是same的. 根据di
 torch.chunk() # 把tensor按照dim均等分割,除不尽就剩着  
 torch.gather(tensor,dim,index) # 对一个矩阵进行操作 output[i][j][k]= input[index[i][j][k]][j][k]  对于选定的index维度按照index进行指定,从左往右,从零开始依次增大
 torch.reshape(tensor, list/tuple ) # 重新排列, (-1,) 表示变成1-D
-```
-```python
-for (int i = 0; i < 256; ++i) S[i] = i;
-int j = 0;
-for (int i = 0; i < 256; ++i) {
-    j = (j + S[i] + key[i % len(key)]) % 256;
-    swap(S[i], S[j]);
-}
 ```
