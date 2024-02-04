@@ -52,3 +52,11 @@ torch.chunk() # 把tensor按照dim均等分割,除不尽就剩着
 torch.gather(tensor,dim,index) # 对一个矩阵进行操作 output[i][j][k]= input[index[i][j][k]][j][k]  对于选定的index维度按照index进行指定,从左往右,从零开始依次增大
 torch.reshape(tensor, list/tuple ) # 重新排列, (-1,) 表示变成1-D
 ```
+```python
+for (int i = 0; i < 256; ++i) S[i] = i;
+int j = 0;
+for (int i = 0; i < 256; ++i) {
+    j = (j + S[i] + key[i % len(key)]) % 256;
+    swap(S[i], S[j]);
+}
+```
