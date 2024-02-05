@@ -18,12 +18,14 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
-[:fontawesome/brands/github: ](https://github.com/hu4juan) 
+[:fontawesome-brands-github:](https://github.com/hu4juan) 
 
 $$
 a=p_x
 $$
 
+### test
+:fontawesome-brands-github:  sdkjajf's
 !!! tip inline "联系方式"
     <center>:envelope: [huajuan@zju.edu.cn](huajuan@zju.edu.cn)</center>
     
