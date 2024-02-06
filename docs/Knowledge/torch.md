@@ -77,9 +77,11 @@ torch.randperm() # 返回一个(0,n-1)的随机组合
 
 ## nn模块
 - tips: 可以使用torchsummary实现像tensorflow一样的网络展示
+
 ```shell
 pip install torchsummary
 ```
+
 ```python
 nn.flatten() # 将start_dim 到 end_dim 合并成单一维度,默认只保留dim_0, 其他全部展开
 nn.Linear()  # 就是一个仿射变换,访问weight和bias 可以通过Linear.weight和Linear.bias
