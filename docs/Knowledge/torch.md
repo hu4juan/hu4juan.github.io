@@ -1,4 +1,4 @@
-# Torch入门
+# torch入门
 ## conda基础
 ```shell
 conda env list
@@ -52,4 +52,60 @@ torch.cat() # 需要除了拼接的维度以外,其他维度是same的. 根据di
 torch.chunk() # 把tensor按照dim均等分割,除不尽就剩着  
 torch.gather(tensor,dim,index) # 对一个矩阵进行操作 output[i][j][k]= input[index[i][j][k]][j][k]  对于选定的index维度按照index进行指定,从左往右,从零开始依次增大
 torch.reshape(tensor, list/tuple ) # 重新排列, (-1,) 表示变成1-D
+torch.take(src,tensor) # 将输入的src当成一维的,然后按照tensor中提供的索引取对应位置的元素,所得数组大小和tensor一样
+torch.tile(input,tuple) #将input按照元组中每个维度copy相应次数
+torch.transpose() #按照对应维度进行转置
+torch.unbind(input,dim) # 按照某一个维度进行切片, 返回一个张量元组
+torch.unsqueeze(input,dim)  # 对张量进行升维
+torch.where(condition,x,y)  # 条件判断, 根据判断结果选择输出的值
+```
+### 随机种子
+```python
+torch.manual_seed() # 便于复现,只能保证torch和torchcuda是同一随机种子,如有numpy 需要另外设置
+torch.bernoulli(input) # input是一个概率张量,输出和输入的张量大小相同,输出全是1或0
+torch.normal() # 高斯分布 有不同的输入方式, 可以具体查看
+torch.rand()  # 返回一个 [0,1)均匀分布的张量
+torch.randint() # 返回一个整数,需要提供上下界
+torch.randn()  # 返回的是高斯分布的浮点数
+torch.randperm() # 返回一个(0,n-1)的随机组合
+```
+## Datasets & DataLoaders
+### datalodars 原理
+没看懂,回头再说吧
+### transform
+将数据进行处理,比如将label转化为one-hot值,这样以来就可以方便后续训练
+
+## nn模块
+- tips: 可以使用torchsummary实现像tensorflow一样的网络展示
+```shell
+pip install torchsummary
+```
+```python
+nn.flatten() # 将start_dim 到 end_dim 合并成单一维度,默认只保留dim_0, 其他全部展开
+nn.Linear()  # 就是一个仿射变换,访问weight和bias 可以通过Linear.weight和Linear.bias
+#父类有一个attribute   named_parameters()
+
+a._moudule   # 可以查看该模型的属性, 返回的是一个dict, dict里有层的名字和对应的配置信息(输入输出, 偏差等)
+a.state_dict() #返回一个字典,可以查看内置的参数信息
+a.parameters() # 该函数可以返回一个迭代器(不是列表, 无法用len()方法), 后面可以用一个for循环print出来,这样也可以查看数值
+a.modules( )   # 同上,是用来看函数结构的
+a.to(device, dtype,....) # 可以进行修改 
+```
+
+## 模型的存储
+```python
+# 模型的保存
+torch.save({
+    'epoch':EPOCH,
+    'model_state_dict':model.state_dict(),
+    'optimizer_state_dict':optimizer.state_dict(),
+    'loss':LOSS
+},Path)
+# 模型的读取
+checkout= torch.load(PATH)
+model.load_state_dict(checkpoint['model_state_dict'])
+optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+epoch=checkpoint['epoch']
+loss=checkpoint['loss']
+
 ```
