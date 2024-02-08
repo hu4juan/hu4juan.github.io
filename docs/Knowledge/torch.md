@@ -109,5 +109,56 @@ model.load_state_dict(checkpoint['model_state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 epoch=checkpoint['epoch']
 loss=checkpoint['loss']
-
 ```
+## sequential
+```python
+nn.Sequential() # 可以用orderdict进行赋值,也可以直接往里填模块,用字典可以给每个层用键值命名
+nn.ModuleList() # 就是把一些module放到了一起
+```
+- Sequential 和 ModuleList的区别主要在于, ModuleList是一个无序的列表, 只是把模块给装在一起, Sequential 是默认带有顺序的,并且自带forward方法, 而 ModuleList需要自己构造.
+
+## Autograd
+```python
+# 如果a是标量无所谓,但如果a是向量的话需要传入一个和输出等大小的jacob矩阵
+# 同时也要记得对向量进行梯度置零   
+# 在推理时,可以整体使用 with torch.no_grad():
+vec.grad.zero_()
+a.backward() 
+# jacob计算
+jacobian(function, x)  # function 是调用函数名称(不需要加括号), x 是函数的输入
+x.grad = y.backward( torch.ones_like(y))= torch.ones_like(y) @ jacobian( y,x) # @ 表示矩阵相乘
+```
+
+## train
+```python
+def train_loop(dataloader, model, loss_fn, optimizer):
+    size = len (dataloader.dataset)
+    for batch, (X, y) in enumerate (dataloader):
+    # Compute prediction and loss
+        pred = model (X)
+        loss = loss_fn(pred, y)
+        # Backpropagation
+        optimizer.zez_grad()
+        loss. backward
+        optimizer.step()
+        if batch % 100 == 0:
+            loss, current = loss.item(), batch * len(X)
+            print(f"loss: {loss:>7f} [{current:>5d}/{size:>5d}]")
+def test_loop(dataloader, model, loss_fn):
+    size = len (dataloader.dataset)
+    num_batches = len (dataloader)
+    test_loss, correct = 0, 0
+    with torch.no_grad():
+        for X, y in dataloader:
+            pred = model (X)
+            test_loss += loss_fn(pred, y).item()
+            correct += (pred.argmax (1) == y). type(torch.float).sum().item()
+            test_loss /= num_batches
+            correct /= size
+            print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f}\n")
+```
+## Embedding
+对于传统的 one-hot编码,在输入较多的情况下会有一些问题
+- 输入序列过长
+- 较稀疏,冗余信息过多,表征能力不强
+可以当作是一种全连接网络, 可以把输入的one-hot 转化为一个浮点的vector
