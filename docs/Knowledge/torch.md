@@ -94,7 +94,7 @@ a.modules( )   # 同上,是用来看函数结构的
 a.to(device, dtype,....) # 可以进行修改 
 ```
 
-## 模型的存储
+## 模型的存储与加载
 ```python
 # 模型的保存
 torch.save({
@@ -109,6 +109,8 @@ model.load_state_dict(checkpoint['model_state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 epoch=checkpoint['epoch']
 loss=checkpoint['loss']
+# 加载
+model.eval()  # 可以让training参数false, 和 model.require_grad = False
 ```
 ## sequential
 ```python
@@ -162,3 +164,13 @@ def test_loop(dataloader, model, loss_fn):
 - 输入序列过长
 - 较稀疏,冗余信息过多,表征能力不强
 可以当作是一种全连接网络, 可以把输入的one-hot 转化为一个浮点的vector
+
+## Dropout 机制
+初衷是为了防止overfitting. 为了保证训练和推理过程中参数的期望一致, 本来是
+$$
+w_{infer}=pw
+$$
+为了保证推理时的计算较少, 将计算负担增加到训练侧, 加一个scaler
+$$
+w_{train} = /frac{1}{1-p}w
+$$

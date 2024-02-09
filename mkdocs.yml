@@ -54,7 +54,7 @@ nav:
     - Knowledge/index.md
     - Docker: Knowledge/docker.md
     - Deeplearning: Knowledge/torch.md
-
+    - Transformer: Knowledge/transformer.md
   - Wisdom:
     - Wisdom/index.md
     - Ideal white: Wisdom/i want find u
