@@ -172,5 +172,5 @@ w_{infer}=pw
 $$
 为了保证推理时的计算较少, 将计算负担增加到训练侧, 加一个scaler
 $$
-w_{train} = /frac{1}{1-p}w
+w_{train} = \frac{1}{1-p} w
 $$
