@@ -117,6 +117,7 @@ model.eval()  # 可以让training参数false, 和 model.require_grad = False
 nn.Sequential() # 可以用orderdict进行赋值,也可以直接往里填模块,用字典可以给每个层用键值命名
 nn.ModuleList() # 就是把一些module放到了一起
 ```
+
 - Sequential 和 ModuleList的区别主要在于, ModuleList是一个无序的列表, 只是把模块给装在一起, Sequential 是默认带有顺序的,并且自带forward方法, 而 ModuleList需要自己构造.
 
 ## Autograd

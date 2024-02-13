@@ -53,6 +53,7 @@ tgt_embedding=tgt_embedding_table(src_seq)
 ```
 ### Position encoding
 这个可以增强模型的泛化能力, 使得在推理时遇到比训练时更长的句子时可以通过线性变换的到超出训练时长度的结果
+
 \begin{gather*}
     PE(pos,2i)=sin(pos/10000^{2i/d_{\mathrm{model}}})\\
     PE(pos,2i+1)=cos(pos/10000^{2i/d_{\mathrm{model}}})\\
@@ -92,15 +93,15 @@ print(tgt_pe_embedding)
 
     <center>mask‘s size = [batc_size,max_src_len,max_src_len]</center>
 #### scaled dot-product attention
-    ```python
-    def scaled_dot_product_attention(Q,K,V,mask,d_k):
-        # shape of Q,K,V : ( batch_size * num_head , seq_len , model_dim/num_head)
-        score=torch.bmm(Q,K.transpose(-2,-1)/torch.sqrt(d_k))
-        mask_score=score.masked_fill(mask,-1e9)
-        prob=F.softmax(mask_score,-1)
-        context=torch.bmm(prob,V)
-        return context
-    ```
+```python
+def scaled_dot_product_attention(Q,K,V,mask,d_k):
+    # shape of Q,K,V : ( batch_size * num_head , seq_len , model_dim/num_head)
+    score=torch.bmm(Q,K.transpose(-2,-1)/torch.sqrt(d_k))
+    mask_score=score.masked_fill(mask,-1e9)
+    prob=F.softmax(mask_score,-1)
+    context=torch.bmm(prob,V)
+    return context
+```
 #### mask
 ```python
 valid_encoder_pos= torch.unsqueeze(torch.cat([ torch.unsqueeze(F.pad(torch.ones(L),(0,max(src_len)-L)),0) for L in src_len]),2)
