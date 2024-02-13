@@ -52,6 +52,7 @@ src_embedding=src_embedding_table(src_seq)
 tgt_embedding=tgt_embedding_table(src_seq)
 ```
 ### Position encoding
+这个可以增强模型的泛化能力, 使得在推理时遇到比训练时更长的句子时可以通过线性变换的到超出训练时长度的结果
 \begin{gather*}
     PE(pos,2i)=sin(pos/10000^{2i/d_{\mathrm{model}}})\\
     PE(pos,2i+1)=cos(pos/10000^{2i/d_{\mathrm{model}}})\\
@@ -90,7 +91,17 @@ print(tgt_pe_embedding)
     $\sqrt{d_k}$ 是为了保持*softmax*中的数值不要太大,不然会出现概率大的非常大,小的非常小,这样一来导致函数的梯度会出现一些接近零的数,导致梯度下降没有效果.
 
     <center>mask‘s size = [batc_size,max_src_len,max_src_len]</center>
-
+#### scaled dot-product attention
+    ```python
+    def scaled_dot_product_attention(Q,K,V,mask,d_k):
+        # shape of Q,K,V : ( batch_size * num_head , seq_len , model_dim/num_head)
+        score=torch.bmm(Q,K.transpose(-2,-1)/torch.sqrt(d_k))
+        mask_score=score.masked_fill(mask,-1e9)
+        prob=F.softmax(mask_score,-1)
+        context=torch.bmm(prob,V)
+        return context
+    ```
+#### mask
 ```python
 valid_encoder_pos= torch.unsqueeze(torch.cat([ torch.unsqueeze(F.pad(torch.ones(L),(0,max(src_len)-L)),0) for L in src_len]),2)
 valid_encoder_pos_mat=torch.bmm(valid_encoder_pos,valid_encoder_pos.transpose(1,2))
@@ -99,9 +110,27 @@ mask_encoder_matrix=invalid_encoder_pos_mat.to(torch.bool)
 print(mask_encoder_matrix)
 ```
 ### intra-attention mask
-
-### decoder self attention mask
+!!! note "mask层形状"
+    mask.shape = [ batch.size , decoder_seq_len, encoder_seq_len]
+```python
+# intra-attention mask
+valid_encoder_pos=valid_encoder_pos
+valid_decoder_pos=torch.unsqueeze(torch.cat([ torch.unsqueeze( F.pad(torch.ones(L),(0,max(tgt_len)-L)),0) for L in tgt_len]),2)
+valid_cross_pos=torch.bmm(valid_decoder_pos,valid_encoder_pos.transpose(1,2))
+invalid_cross_pos_mat=1- valid_cross_pos
+mask_cross_attention=invalid_cross_pos_mat.to(torch.bool)
+```
+### decoder self attention mask(因果mask)
 decoder和encoder不同, decoder 有两个注意力机制, 分别是自身对于输入的self-attention以及对于endcoder和上一个注意力输出的交叉注意力层
+```python
+# self attention mask in decoder
+valid_decoder_tri_matrix=[torch.unsqueeze(F.pad(torch.tril(torch.ones(L,L)),(0,max(tgt_len)-L,0,max(tgt_len)-L)),0) for L in tgt_len] 
+valid_decoder_tri_matrix=torch.cat(valid_decoder_tri_matrix)
+invalid_decoder_tri_mat=(1-valid_decoder_tri_matrix).to(torch.bool)
+```
 
-### Multi-head self attention 
+question
+- 如何根据一个word embedding 得到 三个序列 query key value呢
+- 根据初始的embedding得到的QKV的linear 有没有 bias
+
 

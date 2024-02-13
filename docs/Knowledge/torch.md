@@ -174,3 +174,6 @@ $$
 $$
 w_{train} = \frac{1}{1-p} w
 $$
+在 transformer 中, 输出结果时会加一个dropout
+## 一些loss
+### Crossentropy
