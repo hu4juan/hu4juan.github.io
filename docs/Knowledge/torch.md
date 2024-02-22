@@ -27,6 +27,7 @@ torch.is_nonzero(a)
 torch.is_floating_point(a)
 torch.numel(a)  # 返回tensor中元素的个数
 torch.set_default_tensor_type()# 设置默认数据类型
+torch.allclose(a,b) # 对比两个张量到小数点一定位数是否一样
 ```
 ### tensor的一些操作
 ```python
@@ -146,6 +147,7 @@ def train_loop(dataloader, model, loss_fn, optimizer):
         optimizer.step()
         if batch % 100 == 0:
             loss, current = loss.item(), batch * len(X)
+            # 打印的时候用 tensor.item(), 否则影响性能
             print(f"loss: {loss:>7f} [{current:>5d}/{size:>5d}]")
 def test_loop(dataloader, model, loss_fn):
     size = len (dataloader.dataset)
@@ -176,5 +178,21 @@ $$
 w_{train} = \frac{1}{1-p} w
 $$
 在 transformer 中, 输出结果时会加一个dropout
-## 一些loss
-### Crossentropy
+
+## GPU train
+### 单卡
+
+```python
+torch.cuda.is_available() # 检测cuda能不能用 
+torch.cuda.device_count() # 检测GPU数量
+os.environ["CUDA_VISIBLE_DEVICES"]="0" # 设置GPU编号,多卡可以写成 "0,1,2,3,4"
+checkpoint=torch.load(Path,map_location=torch.device("GPU")) # 可以是  cpu, cuda, cuda: index
+model.cuda()  # 把模型送进GPU
+var_tensor=var_tensor.cuda() # 张量需要用等号再赋值一次
+```
+### 多卡
+
+```python
+torch.distri
+
+```

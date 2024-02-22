@@ -23,9 +23,10 @@ statistics: true
 !!! tip inline "联系方式"
     <center>:fontawesome-solid-envelope: [huajuan@zju.edu.cn](huajuan@zju.edu.cn)</center>
     
-    <center>:fontawesome-brands-qq: 1787857819</center>
+
+    <center>:fontawesome-brands-qq: 球球:1787857819                                   </center>
 
 ???+ info inline "统计"
     <center>          页面数：{{pages}}         </center>
-    
-    <center>          总字数：{{words}}             </center>
+    <center>          总字数：{{words}}         </center>
+    <center>          代码数: {{codes}}         </center>
