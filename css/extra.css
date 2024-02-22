@@ -1,0 +1,104 @@
+
+
+
+
+
+
+
+
+/* img 通用格式*/
+.general-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+:root {
+    --md-text-font: 'JetBrains Mono', "LXGW WenKai Screen";
+    --md-code-font: 'JetBrains Mono'
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+    font-weight: 600;
+}
+
+.md-typeset h3 {
+    font-weight: 500;
+}
+
+li {
+    line-height: 1.4;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:is(:focus, :hover) {
+    color: inherit;
+    opacity: 0.95;
+}
+
+.md-typeset details:not([open]) {
+    box-shadow: var(--md-shadow-z2);
+    padding-bottom: 0;
+}
+
+.md-typeset img,
+.md-typeset video {
+    box-shadow: var(--md-shadow-z1);
+    border-radius: 2px;
+}
+
+.md-typeset div.arithmatex {
+    overflow-y: hidden;
+}
+
+.md-typeset :is(.emojione, .twemoji, .gemoji) {
+    vertical-align: sub;
+}
+
+.md-typeset .md-button {
+    border: .15rem solid;
+    border-radius: .0rem;
+    color: var(--md-primary-fg-color);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    padding: .225em 2em;
+    transition: color 125ms,background-color 125ms,border-color 125ms;
+}
+
+/* :root,
+[data-md-color-scheme=default] {
+    --md-default-fg-color: rgba(49, 37, 32, 1);
+    --md-default-fg-color--light: rgba(59, 47, 42, 0.8);
+    --md-default-fg-color--lighter: rgba(69, 57, 52, 0.6);
+    --md-default-fg-color--lightest: rgba(79, 67, 62, 0.4);
+    --md-default-bg-color: #f8f8ff; 
+    --md-default-bg-color--light: hsla(0, 0%, 100%, 0.7);
+    --md-default-bg-color--lighter: hsla(0, 0%, 100%, .3);
+    --md-default-bg-color--lightest: hsla(0, 0%, 100%, .12);
+    --md-primary-fg-color: #5b93e6; /* 主色 */
+    /* --md-primary-fg-color--light: #ab9188;
+    --md-primary-fg-color--dark: #806b65;
+    --md-primary-bg-color: #eaeef1;
+    --md-primary-bg-color--light: hsla(0, 0%, 100%, .7);
+    --md-accent-fg-color: #5e91eb;
+    --md-accent-fg-color--light: #a4beeb;
+    --md-accent-fg-color--transparent: rgba(82, 108, 254, .1);
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--light: hsla(0, 0%, 100%, .7);
+} */ 
+
+:root,
+[data-md-color-scheme="default"] {
+    background-image: linear-gradient(to bottom, #a8edea 0%, #fed6e3 100%);
+}
+
+:root,
+[data-md-color-scheme=slate] {
+    --md-primary-fg-color: #4684e1; /* 主色 */
+    --md-primary-bg-color: #eaeef1;
+    --md-primary-bg-color--light: hsla(0, 0%, 100%, .7);
+}
+
