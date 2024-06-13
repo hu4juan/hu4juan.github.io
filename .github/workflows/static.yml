@@ -31,10 +31,7 @@ jobs:
       - run: pip install mkdocs-statistics-plugin
       - run: pip install livereload
       - run: pip install rich
-      # - run: pip install
-      - run: ls
-      # - run: cd mkdocs-toc-plugin
-      # - run: ls
+      - run: pip install setuptools
       - run: python3 mkdocs-toc-plugin/setup.py build
       - run: python3 mkdocs-toc-plugin/setup.py install
       - run: mkdocs gh-deploy --force
