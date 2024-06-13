@@ -4,7 +4,6 @@ repo_name: hu4juan's blog
 repo_url: https://github.com/hu4juan/hu4juan.github.io
 theme:
   name: material
-  
   features:
     - search.suggest
     - search.highlight
@@ -105,7 +104,6 @@ markdown_extensions:
       generic: true
 
 extra_css:
-
   - css/extra.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
