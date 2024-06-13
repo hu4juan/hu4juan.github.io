@@ -2,57 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://hu4juan.github.io/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hu4juan.github.io/Appreciation/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hu4juan.github.io/Appreciation/film/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <lastmod>2024-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hu4juan.github.io/Code/</loc>
+         <lastmod>2024-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hu4juan.github.io/Code/mistakes/</loc>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hu4juan.github.io/Handicraft/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hu4juan.github.io/Knowledge/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hu4juan.github.io/Knowledge/docker/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hu4juan.github.io/Knowledge/lossfun/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <loc>https://hu4juan.github.io/Knowledge/AI_related/</loc>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hu4juan.github.io/Knowledge/torch/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <loc>https://hu4juan.github.io/Knowledge/AI_related/lossfun/</loc>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hu4juan.github.io/Knowledge/transformer/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <loc>https://hu4juan.github.io/Knowledge/AI_related/torch/</loc>
+         <lastmod>2024-06-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hu4juan.github.io/Knowledge/AI_related/transformer/</loc>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hu4juan.github.io/Wisdom/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hu4juan.github.io/Wisdom/i%20want%20find%20u/</loc>
-         <lastmod>2024-02-22</lastmod>
+         <loc>https://hu4juan.github.io/Wisdom/i_want_find_u/</loc>
+         <lastmod>2024-06-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
