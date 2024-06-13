@@ -6,7 +6,7 @@ layernorm 更针对样本来计算,计算时是以个体为中心来计算. 而b
 - mask multi-head attention    
 Attention是可以看到所有输入的一个东西,但是在实际场景中,decoder不应该看到未来的东西, 所以decoder要通过一个mask机制来对未来的东西做修正
 ## Transformer mechanism
-![变形金刚示意图-w70](../static/transformer_model.png)
+![变形金刚示意图-w70](../../static/transformer_model.png)
 ## Transformer API
 ```python
 class transformer():
@@ -84,7 +84,7 @@ print(src_pe_embedding)
 print(tgt_pe_embedding)
 ```
 ### encoder self attention mask
-![attention](../static/attention.png)
+![attention](../../static/attention.png)
 !!! note "Scaled Dot-Product Attention"
     $$
     \operatorname{Attention} ( Q ,K , V ) = \operatorname {softmax}(\frac{QK^T}{\sqrt{d_k}})V

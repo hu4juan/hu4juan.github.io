@@ -30,4 +30,6 @@ jobs:
       - run: pip install jieba
       - run: pip install mkdocs-statistics-plugin
       - run: pip install livereload
+      - run: pip install rich
+      - run: pip install git+https://github.com/TonyCrane/mkdocs-toolchain/trunk/mkdocs-toc-plugin
       - run: mkdocs gh-deploy --force

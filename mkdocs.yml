@@ -13,6 +13,7 @@ theme:
     - navigation.indexes
     - navigation.top
     - toc.follow 
+    - content.code.annotate
   favicon: static/favico.ico
   icon:
     repo: fontawesome/brands/git-alt
@@ -53,12 +54,17 @@ nav:
   - Knowledge:
     - Knowledge/index.md
     - Docker: Knowledge/docker.md
-    - Deeplearning: Knowledge/torch.md
-    - Transformer: Knowledge/transformer.md
-    - Loss: Knowledge/lossfun.md
+    - AI相关: 
+      - Knowledge/AI_related/index.md
+      - Deeplearning: Knowledge/AI_related/torch.md
+      - Transformer: Knowledge/AI_related/transformer.md
+      - Loss: Knowledge/AI_related/lossfun.md
+  - Code:
+    - Code/index.md
+    - 菜是原罪: Code/mistakes.md
   - Wisdom:
     - Wisdom/index.md
-    - Ideal white: Wisdom/i want find u
+    - Ideal white: Wisdom/i_want_find_u.md
   - Handicraft:
     - Handicraft/index.md
   - Appreciation:
@@ -124,6 +130,7 @@ plugins:
       type: timeago
       enable_creation_date: true
   - statistics
+  - toc
 extra:
   analytics:
     provider: google

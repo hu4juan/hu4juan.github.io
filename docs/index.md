@@ -21,7 +21,7 @@ statistics: true
 ## My hobby
 ## My CV
 !!! tip inline "联系方式"
-    <center>:fontawesome-solid-envelope: [huajuan@zju.edu.cn](huajuan@zju.edu.cn)</center>
+    <center>:fontawesome-solid-envelope: [huajuan@zju.edu.cn](mailto:huajuan@zju.edu.cn)</center>
     
 
     <center>:fontawesome-brands-qq: 球球:1787857819                                   </center>
