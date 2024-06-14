@@ -9,6 +9,6 @@ cd $workDir
 
 bash ./_sync.sh
 
-mkdocs gh-deploy
+python -m mkdocs gh-deploy
 
 cd $curDir
