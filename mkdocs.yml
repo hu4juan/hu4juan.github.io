@@ -127,6 +127,8 @@ plugins:
   - git-revision-date-localized:
       type: timeago
       enable_creation_date: true
+      timezone: Asia/Shanghai
+      locale: zh
   - statistics
   - toc
 extra:
