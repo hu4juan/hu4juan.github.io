@@ -90,9 +90,9 @@
     padding: 0px 8px;
 }
 .note-tag::before {
-    content: "课程笔记";
+    content: "学习笔记";
 }
-.lab-tag {
+/* .lab-tag {
     border: 1px solid #3f6ec6;
     color: #3f6ec6;
     border-radius: 0.9em;
@@ -101,8 +101,20 @@
     margin-left: 4px;
 }
 .lab-tag::before {
-    content: "实验报告";
+    content: "学习笔记";
+} */
+.essay-tag {
+    border: 1px solid #e92455;
+    color: #e92455;
+    border-radius: 0.9em;
+    font-size: 0.9em;
+    padding: 0px 8px;
+    margin-left: 4px;
 }
+.essay-tag::before {
+    content: "小作文来no";
+}
+
 .item-actions, .item-lock {
     grid-area: actions;
     padding-right: 14px;
@@ -119,9 +131,9 @@
         font-size: 0.9em;
         padding: 0px 0px;
     }
-    .lab-tag {
-        border: 5px solid #3f6ec6;
-        color: #3f6ec6;
+    .essay-tag {
+        border: 1px solid #e92455;
+        color: #e92455;
         border-radius: 0.9em;
         font-size: 0.9em;
         padding: 0px 0px;
@@ -130,7 +142,7 @@
     .note-tag::before {
         content: none;
     }
-    .lab-tag::before {
+    .essay-tag::before {
         content: none;
     }
 }
