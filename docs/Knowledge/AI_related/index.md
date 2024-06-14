@@ -11,6 +11,6 @@
 {{ BEGIN_TOC }}
 - 安全类课程笔记:
     - 密码学-读书笔记: lossfun
-    - 软件安全原理和实践[lab]: torch.md
-    - 网络安全原理与实践[note]: transformer
+    - 软件安全原理和实践[essay]: torch.md
+    - 网络安全原理与实践[essay]: transformer
 {{ END_TOC }}

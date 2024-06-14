@@ -99,13 +99,13 @@ class TocPlugin(BasePlugin):
                 detail = dict()
                 t = key
                 detail['note'] = False
-                detail['lab'] = False
+                detail['essay'] = False
                 if "[note]" in t:
                     detail['note'] = True
                     t = t.replace("[note]", "")
-                if "[lab]" in t:
-                    detail['lab'] = True
-                    t = t.replace("[lab]", "")
+                if "[essay]" in t:
+                    detail['essay'] = True
+                    t = t.replace("[essay]", "")
                 detail['title'] = t
                 detail['link'] = value
                 detail['words'], detail['codes'], detail['read_time'] = get_statistics(value, base)
