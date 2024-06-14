@@ -6,9 +6,8 @@ curDir=`pwd`
 workDir=$(cd "$(dirname "$0")";pwd)
 
 cd $workDir
-
 bash ./_sync.sh
-ls
+cd ..
 python -m mkdocs gh-deploy
 
 cd $curDir
