@@ -61,14 +61,14 @@ nav:
   - Code:
     - Code/index.md
     - 菜是原罪: Code/mistakes.md
-  - Wisdom:
-    - Wisdom/index.md
-    - Ideal white: Wisdom/i_want_find_u.md
-  - Handicraft:
-    - Handicraft/index.md
-  - Appreciation:
-    - Appreciation/index.md
-    - 影视鉴赏: Appreciation/film.md
+  # - Wisdom:
+  #   - Wisdom/index.md
+  #   - Ideal white: Wisdom/i_want_find_u.md
+  # - Handicraft:
+  #   - Handicraft/index.md
+  # - Appreciation:
+  #   - Appreciation/index.md
+  #   - 影视鉴赏: Appreciation/film.md
 markdown_extensions:
   - toc:
       permalink: true
