@@ -53,14 +53,20 @@ nav:
   - Knowledge:
     - Knowledge/index.md
     - Docker: Knowledge/docker.md
-    - AI相关: 
+    - AI基本功: 
       - Knowledge/AI_related/index.md
       - Deeplearning: Knowledge/AI_related/torch.md
       - Transformer: Knowledge/AI_related/transformer.md
       - Loss: Knowledge/AI_related/lossfun.md
+    - 强化学习:
+      - Knowledge/RL/index.md
+    - State estimation:
+      - Knowledge/State_estimation/index.md
   - Code:
     - Code/index.md
     - 菜是原罪: Code/mistakes.md
+  - 配环境:
+    - circumstance/index.md
   # - Wisdom:
   #   - Wisdom/index.md
   #   - Ideal white: Wisdom/i_want_find_u.md
@@ -90,8 +96,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.tasklist:

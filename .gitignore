@@ -6,8 +6,8 @@
 
 # Static Files
 site/
-*/build
-*/dist
-*/mkdocs_toc_plugin.egg-info
+**/build
+**/dist
+**/mkdocs_toc_plugin.egg-info
 # material src
 mkdocs-material
