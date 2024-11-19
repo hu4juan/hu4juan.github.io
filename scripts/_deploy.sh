@@ -8,7 +8,7 @@ workDir=$(cd "$(dirname "$0")";pwd)
 cd $workDir
 bash ./_sync.sh
 cd ..
-bash | conda activate blog
+conda activate blog
 python -m mkdocs gh-deploy
 
 cd $curDir
