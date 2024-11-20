@@ -1,4 +1,5 @@
 # Docker
+参考的资源是: b站狂神说java的课程
 记录docker的一些命令
 ## docker命令
 ### 帮助命令
@@ -97,3 +98,5 @@ docker run -d -P --name 容器名 --net netname 镜像名
 # 连通之后就是将该容器放到了目标网络中,给了对应的ip,一个容器,两个ip
 docker network connect 网络名 容器名
 ```
+## Reference
+[1][遇见狂神说课程](https://www.bilibili.com/video/BV1kv411q7Qc/?vd_source=15227b29803bbae89ab1a5d861d714ff): https://www.bilibili.com/video/BV1kv411q7Qc/
